@@ -153,50 +153,144 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>Medication</label>
+    <label>Patient</label>
     <nameField>
-        <label>Medication Name</label>
+        <label>Patient Name</label>
         <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
-    <pluralLabel>Medications</pluralLabel>
+    <pluralLabel>Patients</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
     <fields>
-        <fullName>Patient__c</fullName>
-        <deleteConstraint>Restrict</deleteConstraint>
+        <fullName>Age__c</fullName>
         <externalId>false</externalId>
-        <label>Patient</label>
-        <referenceTo>Patient__c</referenceTo>
-        <relationshipLabel>Medications</relationshipLabel>
-        <relationshipName>Medications</relationshipName>
+        <label>Age</label>
         <required>true</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Lookup</type>
+        <type>Date</type>
     </fields>
     <fields>
-        <fullName>Discription__c</fullName>
+        <fullName>Gender__c</fullName>
         <externalId>false</externalId>
-        <label>Discription</label>
-        <length>32768</length>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>LongTextArea</type>
-        <visibleLines>3</visibleLines>
-    </fields>
-    <fields>
-        <fullName>Doctor_Name__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>Doctor Name</label>
-        <referenceTo>Doctor__c</referenceTo>
-        <relationshipLabel>Medications</relationshipLabel>
-        <relationshipName>Medications</relationshipName>
+        <label>Gender</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Lookup</type>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Female</fullName>
+                    <default>false</default>
+                    <label>Female</label>
+                </value>
+                <value>
+                    <fullName>Male</fullName>
+                    <default>false</default>
+                    <label>Male</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Patient_ID__c</fullName>
+        <displayFormat>PID-{0000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Patient ID</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Blood_Group__c</fullName>
+        <externalId>false</externalId>
+        <label>Blood Group</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>a-</fullName>
+                    <default>false</default>
+                    <label>a-</label>
+                </value>
+                <value>
+                    <fullName>a+</fullName>
+                    <default>false</default>
+                    <label>a+</label>
+                </value>
+                <value>
+                    <fullName>ab-</fullName>
+                    <default>false</default>
+                    <label>ab-</label>
+                </value>
+                <value>
+                    <fullName>ab+</fullName>
+                    <default>false</default>
+                    <label>ab+</label>
+                </value>
+                <value>
+                    <fullName>b-</fullName>
+                    <default>false</default>
+                    <label>b-</label>
+                </value>
+                <value>
+                    <fullName>b+</fullName>
+                    <default>false</default>
+                    <label>b+</label>
+                </value>
+                <value>
+                    <fullName>o-</fullName>
+                    <default>false</default>
+                    <label>o-</label>
+                </value>
+                <value>
+                    <fullName>o+</fullName>
+                    <default>false</default>
+                    <label>o+</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Patient_Age__c</fullName>
+        <externalId>false</externalId>
+        <formula>TODAY()  -  Age__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Patient Age</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phon_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Phon Number</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
     </fields>
 </CustomObject>
